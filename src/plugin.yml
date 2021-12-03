@@ -1,0 +1,11 @@
+name: InteractiveBlocks
+main: cloud.stivenfocs.InteractiveBlocks.Main
+version: 1.0-Beta
+author: StivenFocs
+description: "Make a block interactable"
+commands:
+    interactiveblocks:
+        aliases: [iblocks]
+permissions:
+    interactiveblocks.admin:
+        default: op
