@@ -128,9 +128,7 @@ public class Main extends JavaPlugin implements Listener {
             dataConfig.options().copyDefaults(true);
 
             if (dataConfig.get("blocks") == null) {
-                dataConfig.set("blocks", new Object());
-                String[] str = dataConfig.getString("blocks").split(" ");
-                dataConfig.set("blocks",str[1]);
+                dataConfig.createSection("blocks");
             }
 
             saveDataConfiguration();
