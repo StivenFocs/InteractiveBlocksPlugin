@@ -1,0 +1,20 @@
+name: InteractiveBlocks
+main: cloud.stivenfocs.InteractiveBlocks.Main
+version: 1.0.2-Release
+authors: [StivenFocs]
+api-version: 1.17
+softdepend: [PlaceholderAPI]
+description: "Customize a block interaction behavior"
+commands:
+    interactiveblocks:
+        aliases: [iblocks]
+        description: "Main command of the plugin InteractiveBlocks"
+permissions:
+    interactiveblocks.skipermission:
+        default: op
+    interactiveblocks.admin:
+        default: op
+    interactiveblocks.*:
+        children:
+            interactiveblocks.admin: true
+            interactiveblocks.skipermission: true
