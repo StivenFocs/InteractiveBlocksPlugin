@@ -71,8 +71,10 @@ public class Main extends JavaPlugin implements Listener {
             getCommand("interactiveblocks").setExecutor(this);
             Bukkit.getPluginManager().registerEvents(this, this);
             reloadVars();
+            new Metrics(this, 16469);
         } catch (Exception ex) {
-            getLogger().severe("An error occurred while trying to enable the plugin");
+            getLogger().severe("An exception occurred while trying to enable the plugin");
+            getLogger().severe(ex.getMessage());
             ex.printStackTrace();
             Bukkit.getPluginManager().disablePlugin(this);
         } finally {
@@ -701,7 +703,7 @@ public class Main extends JavaPlugin implements Listener {
                                 try {
                                     for (String command : cmds) {
                                         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
-                                            command = PlaceholderAPI.setPlaceholders(p, answer);
+                                            command = PlaceholderAPI.setPlaceholders(p, command);
                                         }
                                         command = command.replaceAll("%name%", p.getName()).replaceAll("%player%", p.getName());
                                         command = command.replaceAll("%displayname%", p.getDisplayName());
